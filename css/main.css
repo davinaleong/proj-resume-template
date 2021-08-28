@@ -7,3 +7,34 @@
   vertical-align: baseline;
   box-sizing: border-box;
 }
+
+header {
+  grid-area: header;
+}
+
+aside {
+  grid-area: aside;
+}
+
+div#content {
+  grid-area: content;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "aside"
+    "content";
+  grid-template-columns: auto;
+  gap: 10px;
+}
+
+@media screen and (min-width: 992px) {
+  main {
+    grid-template-areas:
+      "header header"
+      "aside content";
+    grid-template-columns: 30% 70%;
+  }
+}
