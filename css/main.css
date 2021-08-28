@@ -121,6 +121,10 @@ aside>div>div {
   margin-bottom: 10px;
 }
 
+.skill-item {
+  margin-bottom: 5px;
+}
+
 div#content {
   grid-area: content;
   padding-left: 20px;
@@ -174,7 +178,7 @@ main {
 .landing-lower {
   display: block;
   margin-top: -1px;
-  height: 10vh;
+  height: 5vh;
   border-radius: 0 0 50% 50%;
   background-color: var(--color-yellow);
 }
@@ -199,6 +203,24 @@ main {
 
 .rating>span.active {
   background: var(--color-orange);
+}
+
+.description {
+  position: relative;
+  padding: 20px 50px;
+}
+
+.left-quote {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right-quote {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (min-width: 540px) {
@@ -254,7 +276,7 @@ main {
     padding-right: 0;
   }
   
-  div#content {
+  #content {
     grid-area: content;
     padding-left: 0;
     padding-right: 20px;
@@ -279,6 +301,16 @@ main {
     grid-template-areas:
       "header header"
       "aside content";
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 35% 65%;
+  }
+
+  .rating>span {
+    background: var(--color-light-grey);
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .rating>span.active {
+    background: var(--color-orange);
+    -webkit-print-color-adjust: exact;
   }
 }

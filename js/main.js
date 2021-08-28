@@ -27,11 +27,10 @@ function ratingHtml() {
 }
 
 function renderSkills(element, count = 0){
-  console.log('render skills');
   for (let i = 0; i < count; i++) {
     const rating = ratingHtml();
     element.append(`
-    <div>
+    <div class="skill-item">
       <p>Skill / Skill</p>
       ${rating}
     </div>
