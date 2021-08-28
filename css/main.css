@@ -130,10 +130,14 @@ aside>section>div {
   margin-bottom: 5px;
 }
 
-div#content {
+.content {
   grid-area: content;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.content>section:not(:first-child) {
+  margin-bottom: 20px;
 }
 
 main {
@@ -232,6 +236,14 @@ main {
 }
 
 .experience-item:nth-child(even) {
+  background: var(--color-off-white);
+}
+
+.education-item {
+  padding: 10px;
+}
+
+.education-item:nth-child(even) {
   background: var(--color-off-white);
 }
 

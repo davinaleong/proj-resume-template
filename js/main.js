@@ -4,9 +4,10 @@ $(document).ready(function() {
   renderSkills($(".skills-languages"), 2);
 
   renderExperienceItems(5);
+  renderEducationItems(4);
 });
 
-function generateRandomInt(min=0, max=10) {
+function generateRandomInt(min = 0, max = 10) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min);
@@ -68,6 +69,22 @@ function renderExperienceItems(count = 0) {
       </div><!-- /.title -->
       <ul>${detailsHtml}</ul>
     </div><!-- /.experience-item -->
+    `);
+  }
+}
+
+function renderEducationItems(count = 0) {
+  for (let i = 0; i < count; i++) {
+    $(".education").append(`
+    <div class="education-item">
+      <div class="title">
+        <div class="period">Start &ndash;<br>End</div>
+        <div class="text">
+          <h3 class="h6">Institution</h3>
+          <p>Qualification</p>
+        </div>
+      </div><!-- /.title -->
+    </div><!-- /.education-item -->
     `);
   }
 }
