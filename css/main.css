@@ -3,6 +3,9 @@
   --color-white: #fff;
   --color-black: #000;
   --color-yellow: #ffeb3b;
+  --color-orange: #FF9800;
+  --color-grey: #212121;
+  --color-light-grey: #fafafa;
 }
 
 * {
@@ -15,10 +18,11 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  color: var(--color-grey);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,6 +55,14 @@ h6, .h6 {
   font-size: 1.25rem;
 }
 
+small, .small, sub, .sub, sup, .sup {
+  font-size: 0.8em;
+}
+
+code, .code, pre, .pre {
+  font-family: "Source Code Pro", monospace;
+}
+
 header {
   grid-area: header;
 }
@@ -73,8 +85,33 @@ main {
   gap: 10px;
 }
 
-code {
-  font-family: "Source Code Pro", monospace;
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.font-montserrat {
+  font-family: Montserrat, sans-serif;
+}
+
+.font-source-sans-pro {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.font-source-code-pro {
+  font-family: "Source Code Pro", sans-serif;
+}
+
+.img-responsive {
+  display: inline-block;
+  width: 117px;
 }
 
 .alert {
@@ -83,6 +120,29 @@ code {
   background: var(--color-red);
   color: var(--color-white);
   text-align: center;
+}
+
+.landing-upper {
+  color: var(--color-grey);
+  background-color: var(--color-yellow);
+}
+
+.landing-content {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.landing-content>.text {
+  padding-left: 20px;
+}
+
+.landing-lower {
+  margin-top: -1px;
+  height: 10vh;
+  border-radius: 0 0 50% 50%;
+  background-color: var(--color-yellow);
 }
 
 @media screen and (min-width: 992px) {
