@@ -1,12 +1,27 @@
 $(document).ready(function() {
-  renderSkills($(".skills-programming"), counts.skills.programming);
-  renderSkills($(".skills-design"), counts.skills.design);
-  renderSkills($(".skills-languages"), counts.skills.languages);
+  renderSkills(
+    $(".skills-programming"),
+    settings.skills.programming.items,
+    settings.skills.programming.text
+  );
+  renderSkills(
+    $(".skills-design"),
+    settings.skills.design.items,
+    settings.skills.design.text
+  );
+  renderSkills(
+    $(".skills-languages"),
+    settings.skills.languages.items,
+    settings.skills.languages.text,
+  );
 
-  renderHobbies(counts.hobbies);
+  renderHobbies(
+    settings.hobbies.items,
+    settings.hobbies.text
+  );
 
-  renderExperienceItems(counts.experience.items);
-  renderEducationItems(counts.education);
+  renderExperienceItems(settings.experience.items);
+  renderEducationItems(settings.education.items);
 });
 
 function generateRandomInt(min = 0, max = 10) {
@@ -16,8 +31,8 @@ function generateRandomInt(min = 0, max = 10) {
 }
 
 function ratingHtml() {
-  const max = counts.rating.max;
-  const rating = generateRandomInt(counts.rating.min, max);
+  const max = settings.rating.max;
+  const rating = generateRandomInt(settings.rating.min, max);
   const remaining = max - rating;
 
   let activeHtml = '';
@@ -33,23 +48,23 @@ function ratingHtml() {
   return '<div class="rating">' + activeHtml + remainingHtml + '</div>';
 }
 
-function renderSkills(element, count = 0){
+function renderSkills(element, count = 0, text = ''){
   for (let i = 0; i < count; i++) {
     const rating = ratingHtml();
     element.append(`
     <div class="skill-item">
-      <p>Skill / Skill</p>
+      <p>${text}</p>
       ${rating}
     </div>
     `);
   }
 }
 
-function renderHobbies(count = 0) {
+function renderHobbies(count = 0, text = '') {
   let itemHtml = '';
 
   for (let i = 0; i < count; i++) {
-    itemHtml += '<li>Lorem ipsum</li>';
+    itemHtml += `<li>${text}</li>`;
   }
 
   $(".hobbies").append(`<ul>${itemHtml}</ul>`);
@@ -59,7 +74,7 @@ function renderExperienceItemDetails(count = 0) {
   let html = '';
 
   for(let i = 0; i < count; i++) {
-    html += '<li>Quisque velit nisi, pretium ut lacinia in, elementum id enim.</li>';
+    html += `<li>${settings.experience.details.text}</li>`;
   }
 
   return html;
@@ -67,16 +82,17 @@ function renderExperienceItemDetails(count = 0) {
 
 function renderExperienceItems(count = 0) {
   for (let i = 0; i < count; i++) {
-    const detailCount = generateRandomInt(counts.experience.details.min, counts.experience.details.max);
+    const detailCount = generateRandomInt(settings.experience.details.min, settings.experience.details.max);
     const detailsHtml = renderExperienceItemDetails(detailCount);
+    const title = settings.experience.title;
 
     $(".experience").append(`
     <div class="experience-item">
       <div class="title">
-        <div class="period">Start &ndash;<br>End</div>
+        <div class="period">${title.start} &ndash;<br>${title.end}</div>
         <div class="text">
-          <h3 class="h6">Company Name</h3>
-          <p>Position</p>
+          <h3 class="h6">${title.name}</h3>
+          <p>${title.subtitle}</p>
         </div>
       </div><!-- /.title -->
       <ul>${detailsHtml}</ul>
@@ -86,14 +102,16 @@ function renderExperienceItems(count = 0) {
 }
 
 function renderEducationItems(count = 0) {
+  const title = settings.education.title;
+
   for (let i = 0; i < count; i++) {
     $(".education").append(`
     <div class="education-item">
       <div class="title">
-        <div class="period">Start &ndash;<br>End</div>
+        <div class="period">${title.start} &ndash;<br>${title.end}</div>
         <div class="text">
-          <h3 class="h6">Institution</h3>
-          <p>Qualification</p>
+          <h3 class="h6">${title.name}</h3>
+          <p>${title.subtitle}</p>
         </div>
       </div><!-- /.title -->
     </div><!-- /.education-item -->
