@@ -69,10 +69,14 @@ header {
 
 aside {
   grid-area: aside;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 div#content {
   grid-area: content;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 main {
@@ -112,6 +116,7 @@ main {
 .img-responsive {
   display: inline-block;
   width: 117px;
+  border-radius: 50%;
 }
 
 .alert {
@@ -129,13 +134,17 @@ main {
 
 .landing-content {
   display: flex;
-  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   margin: auto;
   padding-top: 20px;
 }
 
 .landing-content>.text {
   padding-left: 20px;
+  text-align: center;
 }
 
 .landing-lower {
@@ -151,6 +160,29 @@ main {
       "header header"
       "aside content";
     grid-template-columns: 30% 70%;
+  }
+
+  aside {
+    grid-area: aside;
+    padding-left: 20px;
+    padding-right: 0;
+  }
+  
+  div#content {
+    grid-area: content;
+    padding-left: 0;
+    padding-right: 20px;
+  }
+
+  .landing-content {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 80%;
+  }
+  
+  .landing-content>.text {
+    text-align: left;
   }
 }
 
