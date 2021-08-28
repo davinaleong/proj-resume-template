@@ -25,7 +25,7 @@ const settings = {
     items: 5,
     title: {
       start: 'May 2021',
-      end: 'Jun 2021',
+      end: 'Present',
       name: 'Company Name',
       subtitle: 'Position'
     },
@@ -39,9 +39,9 @@ const settings = {
     items: 4,
     title: {
       start: 'May 2021',
-      end: 'Jun 2021',
-      name: 'DigiPen',
-      subtitle: 'Degree'
+      end: 'Present',
+      name: 'Institution',
+      subtitle: 'Qualification'
     }
   }
 };
