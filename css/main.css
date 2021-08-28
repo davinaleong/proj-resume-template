@@ -227,6 +227,20 @@ main {
   transform: translate(-50%, -50%);
 }
 
+.title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title>*:last-child {
+  margin-left: 10px;
+}
+
+.text>* {
+  margin: unset;
+}
+
 @media screen and (min-width: 540px) {
   main {
     grid-template-areas:
