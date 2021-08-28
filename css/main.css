@@ -161,6 +161,24 @@ main {
   background: var(--color-red);
   color: var(--color-white);
   text-align: center;
+  position: relative;
+}
+
+.alert p {
+  max-width: 60%;
+  margin: auto;
+}
+
+.alert .close {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.alert .close:hover {
+  cursor: pointer;
+  color: var(--color-off-white);
 }
 
 .landing-upper {
