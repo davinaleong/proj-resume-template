@@ -2,15 +2,19 @@ $(document).ready(function() {
   renderSkills($(".skills-programming"), 5);
   renderSkills($(".skills-design"), 3);
   renderSkills($(".skills-languages"), 2);
+
+  renderExperienceItems(5);
 });
 
-function generateRandomInt(max) {
-  return Math.floor(Math.random() * max);
+function generateRandomInt(min=0, max=10) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 function ratingHtml() {
   const max = 5;
-  const rating = generateRandomInt(max);
+  const rating = generateRandomInt(0, max);
   const remaining = max - rating;
 
   let activeHtml = '';
@@ -34,6 +38,36 @@ function renderSkills(element, count = 0){
       <p>Skill / Skill</p>
       ${rating}
     </div>
+    `);
+  }
+}
+
+function renderExperienceItemDetails(count = 0) {
+  let html = '';
+
+  for(let i = 0; i < count; i++) {
+    html += '<li>Quisque velit nisi, pretium ut lacinia in, elementum id enim.</li>';
+  }
+
+  return html;
+}
+
+function renderExperienceItems(count = 0) {
+  for (let i = 0; i < count; i++) {
+    const detailCount = generateRandomInt(1, 5);
+    const detailsHtml = renderExperienceItemDetails(detailCount);
+
+    $(".experience").append(`
+    <div class="experience-item">
+      <div class="title">
+        <div class="period">Start &ndash;<br>End</div>
+        <div class="text">
+          <h3 class="h6">Company Name</h3>
+          <p>Position</p>
+        </div>
+      </div><!-- /.title -->
+      <ul>${detailsHtml}</ul>
+    </div><!-- /.experience-item -->
     `);
   }
 }
