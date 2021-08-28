@@ -75,6 +75,10 @@ code, .code, pre, .pre {
   font-family: "Source Code Pro", monospace;
 }
 
+ul, ol {
+  margin-left: 20px;
+}
+
 p, .p {
   margin-bottom: 5px;
 }
