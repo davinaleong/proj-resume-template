@@ -1,12 +1,12 @@
 $(document).ready(function() {
-  renderSkills($(".skills-programming"), 5);
-  renderSkills($(".skills-design"), 3);
-  renderSkills($(".skills-languages"), 2);
+  renderSkills($(".skills-programming"), counts.skills.programming);
+  renderSkills($(".skills-design"), counts.skills.design);
+  renderSkills($(".skills-languages"), counts.skills.languages);
 
-  renderHobbies(5);
+  renderHobbies(counts.hobbies);
 
-  renderExperienceItems(5);
-  renderEducationItems(4);
+  renderExperienceItems(counts.experience.items);
+  renderEducationItems(counts.education);
 });
 
 function generateRandomInt(min = 0, max = 10) {
@@ -16,8 +16,8 @@ function generateRandomInt(min = 0, max = 10) {
 }
 
 function ratingHtml() {
-  const max = 5;
-  const rating = generateRandomInt(0, max);
+  const max = counts.rating.max;
+  const rating = generateRandomInt(counts.rating.min, max);
   const remaining = max - rating;
 
   let activeHtml = '';
@@ -67,7 +67,7 @@ function renderExperienceItemDetails(count = 0) {
 
 function renderExperienceItems(count = 0) {
   for (let i = 0; i < count; i++) {
-    const detailCount = generateRandomInt(1, 5);
+    const detailCount = generateRandomInt(counts.experience.details.min, counts.experience.details.max);
     const detailsHtml = renderExperienceItemDetails(detailCount);
 
     $(".experience").append(`
