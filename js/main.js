@@ -3,6 +3,8 @@ $(document).ready(function() {
   renderSkills($(".skills-design"), 3);
   renderSkills($(".skills-languages"), 2);
 
+  renderHobbies(5);
+
   renderExperienceItems(5);
   renderEducationItems(4);
 });
@@ -41,6 +43,16 @@ function renderSkills(element, count = 0){
     </div>
     `);
   }
+}
+
+function renderHobbies(count = 0) {
+  let itemHtml = '';
+
+  for (let i = 0; i < count; i++) {
+    itemHtml += '<li>Lorem ipsum</li>';
+  }
+
+  $(".hobbies").append(`<ul>${itemHtml}</ul>`);
 }
 
 function renderExperienceItemDetails(count = 0) {
