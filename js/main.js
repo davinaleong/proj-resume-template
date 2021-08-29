@@ -5,18 +5,23 @@ $(document).ready(function() {
   $(".landing-content h2").text(settings.header.position);
   $(".landing-content img").attr("src", settings.header.profilePic);
 
+  $(".heading-contact").text(settings.headings.contact);
   renderContactDetails(settings.contact);
 
+  $(".heading-skills").text(settings.headings.skills);
+  renderSkills();
+
+  $(".heading-hobbies").text(settings.headings.hobbies);
   renderHobbies(
     settings.hobbies.items,
     settings.hobbies.text
   );
-
-  renderSkills();
   
   $(".description p").text(settings.description);
 
+  $(".heading-experience").text(settings.headings.experience);
   renderExperienceItems(settings.experience.items);
+  $(".heading-education").text(settings.headings.education);
   renderEducationItems(settings.education.items);
 });
 

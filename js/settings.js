@@ -5,6 +5,13 @@ const settings = {
     position: 'Position',
     profilePic: 'images/professional-circle-420.png'
   },
+  headings: {
+    contact: 'Contact',
+    skills: 'Skills',
+    hobbies: 'Hobbies',
+    experience: 'Experience',
+    education: 'Education'
+  },
   contact: [
     {
       title: 'davina-devs.com',

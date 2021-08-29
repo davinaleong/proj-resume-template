@@ -76,6 +76,10 @@ code, .code, pre, .pre {
   font-family: "Source Code Pro", monospace;
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
 ul, ol {
   margin-left: 30px;
 }
