@@ -7,27 +7,13 @@ $(document).ready(function() {
 
   renderContactDetails(settings.contact);
 
-  renderSkills(
-    $(".skills-programming"),
-    settings.skills.programming.items,
-    settings.skills.programming.text
-  );
-  renderSkills(
-    $(".skills-design"),
-    settings.skills.design.items,
-    settings.skills.design.text
-  );
-  renderSkills(
-    $(".skills-languages"),
-    settings.skills.languages.items,
-    settings.skills.languages.text
-  );
-
   renderHobbies(
     settings.hobbies.items,
     settings.hobbies.text
   );
 
+  renderSkills();
+  
   $(".description p").text(settings.description);
 
   renderExperienceItems(settings.experience.items);
@@ -76,16 +62,32 @@ function ratingHtml() {
   return '<div class="rating">' + activeHtml + remainingHtml + '</div>';
 }
 
-function renderSkills(element, count = 0, text = ''){
+function renderSkills() {
+  let skillHtml = '';
+
+  settings.skills.forEach(function(skill) {
+    const skillItem = skillItemHtml(skill.items, skill.text);
+    skillHtml += `
+    <h3 class="h6">${skill.group}</h3>
+    <div>${skillItem}</div>
+    `;
+  });
+
+  $('.skills').append(skillHtml);
+}
+
+function skillItemHtml(count = 0, text = ''){
+  let skillItemHtml = '';
   for (let i = 0; i < count; i++) {
     const rating = ratingHtml();
-    element.append(`
+    skillItemHtml += `
     <div class="skill-item">
       <p>${text}</p>
       ${rating}
     </div>
-    `);
+    `;
   }
+  return skillItemHtml;
 }
 
 function renderHobbies(count = 0, text = '') {

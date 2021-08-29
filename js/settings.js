@@ -38,20 +38,23 @@ const settings = {
     }
   ],
   description: 'Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.',
-  skills: {
-    programming: {
+  skills: [
+    {
+      group: 'Programming',
       items: 5,
       text: 'PHP / Laravel'
     },
-    design: {
+    {
+      group: 'Design',
       items: 3,
       text: 'PhotoShop'
     },
-    languages: {
+    {
+      group: 'Languages',
       items: 2,
       text: 'English'
     },
-  },
+  ],
   rating: {
     min: 0,
     max: 5
