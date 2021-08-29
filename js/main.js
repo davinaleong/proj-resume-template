@@ -1,4 +1,12 @@
 $(document).ready(function() {
+  $(".alert p").html(settings.header.alert);
+
+  $(".landing-content h1").text(settings.header.name);
+  $(".landing-content h2").text(settings.header.position);
+  $(".landing-content img").attr("src", settings.header.profilePic);
+
+  renderContactDetails(settings.contact);
+
   renderSkills(
     $(".skills-programming"),
     settings.skills.programming.items,
@@ -12,13 +20,15 @@ $(document).ready(function() {
   renderSkills(
     $(".skills-languages"),
     settings.skills.languages.items,
-    settings.skills.languages.text,
+    settings.skills.languages.text
   );
 
   renderHobbies(
     settings.hobbies.items,
     settings.hobbies.text
   );
+
+  $(".description p").text(settings.description);
 
   renderExperienceItems(settings.experience.items);
   renderEducationItems(settings.education.items);
@@ -28,6 +38,24 @@ function generateRandomInt(min = 0, max = 10) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min);
+}
+
+function renderContactDetails(contact = []) {
+  let html = '';
+  contact.forEach(function(item) {
+    let textHtml = item.title;
+    if (item.href) {
+      const newTabHtml = item.newTab ? ' target="_blank"' : '';
+      textHtml = `<a href="${item.href}"${newTabHtml}>${item.title}</a>`;
+    }
+
+    html += `<p>
+      ${item.icon}
+      ${textHtml}
+    </p>`;
+  });
+
+  $(".contact").append(html);
 }
 
 function ratingHtml() {
