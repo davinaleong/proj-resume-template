@@ -1,8 +1,8 @@
 const settings = {
   header: {
     alert: 'Press <code>CTRL+P</code> for Windows or <code>CMD+P</code> for Mac to <i class="fa fa-print"></i> print.',
-    name: 'John Doe',
-    position: 'Position',
+    name: 'Davina Leong',
+    position: 'Web Developer',
     profilePic: 'images/professional-circle-420.png'
   },
   headings: {
