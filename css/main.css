@@ -81,11 +81,11 @@ code, .code, pre, .pre {
 }
 
 ul, ol {
-  margin-left: 30px;
+  margin-left: 1em;
 }
 
 p, .p {
-  margin-bottom: 5px;
+  margin-bottom: 0.2em;
 }
 
 .text-align-left {
@@ -94,6 +94,10 @@ p, .p {
 
 .text-align-center {
   text-align: center;
+}
+
+.text-orange {
+  color: var(--color-orange);
 }
 
 .text-align-right {
@@ -118,12 +122,12 @@ header {
 
 aside {
   grid-area: aside;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 aside>section {
-  margin-bottom: 20px;
+  margin-bottom: 1em;
 }
 
 aside>section>div {
@@ -136,12 +140,12 @@ aside>section>div {
 
 .content {
   grid-area: content;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .content>section:not(:first-child) {
-  margin-bottom: 20px;
+  margin-bottom: 1em;
 }
 
 main {
@@ -150,7 +154,7 @@ main {
     "header"
     "aside"
     "content";
-  gap: 30px;
+  gap: 1em;
 }
 
 .img-responsive {
@@ -213,8 +217,31 @@ main {
   background-color: var(--color-yellow);
 }
 
+.contact ul {
+  list-style-type: none;
+  margin-left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact ul > * {
+  width: 33%;
+}
+
 .contact i {
   color: var(--color-orange);
+  margin-right: 0.3em;
+}
+
+.skills ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills ul > * {
+  width: 25%;
 }
 
 .rating {
@@ -284,18 +311,6 @@ main {
 }
 
 @media screen and (min-width: 540px) {
-  main {
-    grid-template-areas:
-      "header header"
-      "aside content";
-  }
-
-  aside {
-    grid-area: aside;
-    padding-left: 20px;
-    padding-right: 0;
-  }
-  
   div#content {
     grid-area: content;
     padding-left: 0;
